@@ -13,35 +13,33 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
 
-FayasNoushad = Client(
-    "Country Info Bot",
+Ekbotz = Client(
+    "Country Info Search Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"],
 )
 
 START_TEXT = """
-Hello {}, I am a country information finder bot. Give me a country name I will send the informations of the country.
+<b>Hello {}, I am a country information finder bot. I Can Find Informations About All Country. Do You Have Any Doubts Use Buttons Below 😅. Give me a country name I will send the informations of the country.
 
-Made by @FayasNoushad
+Please Join My Update Channel For More @eKbOtZ_upDaTE.</b>
 """
 HELP_TEXT = """
-- Just send me a country name
-- Then I will check and send you the informations
+• Just send me a country name
+• Wait Few Seconds 😂
+• Then I will check and send you the informations
 
 <b><u>Informations :-</u></b>
 Name, Native Name, Capital, Population, Region, Sub Region, Top Level Domains, Calling Codes, Currencies, Residence, Timezone, Wikipedia, Google
 
-Made by @FayasNoushad
+<b>A Bot From @eKbOtZ_upDaTE</b>
 """
 ABOUT_TEXT = """
-- **Bot :** `Country Info Bot`
-- **Creator :** [Fayas](https://telegram.me/TheFayas)
-- **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
-- **Source :** [Click here](https://github.com/FayasNoushad/Country-Info-Bot/tree/main)
+- **Bot :** `Country Info Search Bot`
+- **Channel :** [EK BOTZ PROJECTS](https://telegram.me/eKbOtZ_upDaTE)
 - **Language :** [Python3](https://python.org)
 - **Library :** [Pyrogram](https://pyrogram.org)
-- **Server :** [Heroku](https://heroku.com)
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
