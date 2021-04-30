@@ -47,8 +47,8 @@ ABOUT_TEXT = """
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        InlineKeyboardButton('⚜️ Channel ⚜️', url='https://telegram.me/eKbOtZ_upDaTE'),
+        InlineKeyboardButton('💬 Feedbacks 💬', url='https://telegram.me/Feedback_ek_bot')
         ],[
         InlineKeyboardButton('Help', callback_data='help'),
         InlineKeyboardButton('About', callback_data='about'),
@@ -108,11 +108,18 @@ async def start(bot, update):
     )
 
 @Ekbotz.on_message(filters.private & filters.command(["help"]))
-async def start(bot, update):
+async def help(bot, update):
     await update.reply_text(
-        text=HELP_TEXT,
+        text=INFO_TEXT,
         disable_web_page_preview=True,
-        reply_markup=HELP_BUTTONS
+        reply_markup=ABOUT_BUTTONS
+    )
+@Ekbotz.on_message(filters.private & filters.command(["info"]))
+async def info(bot, update):
+    await update.reply_text(
+        text=START_TEXT.format(update.from_user.mention),
+        disable_web_page_preview=True,
+        reply_markup=START_BUTTONS
     )
 
 @Ekbotz.on_message(filters.private & filters.text)
