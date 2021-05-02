@@ -164,4 +164,4 @@ Timezone : `{country.timezones()}`
     except Exception as error:
         print(error)
 
-app.run()
+FayasNoushad.run()
