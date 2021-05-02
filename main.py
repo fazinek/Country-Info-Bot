@@ -112,14 +112,14 @@ async def help(bot, update):
     await update.reply_text(
         text=INFO_TEXT,
         disable_web_page_preview=True,
-        reply_markup=ABOUT_BUTTONS
+        reply_markup=HELP_BUTTONS
     )
 @Ekbotz.on_message(filters.private & filters.command(["info"]))
 async def info(bot, update):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
         disable_web_page_preview=True,
-        reply_markup=START_BUTTONS
+        reply_markup=ABOUT_BUTTONS
     )
 
 @Ekbotz.on_message(filters.private & filters.text)
@@ -164,4 +164,4 @@ Timezone : `{country.timezones()}`
     except Exception as error:
         print(error)
 
-Fayasnoushad.run()
+app.run()
