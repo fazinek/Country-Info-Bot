@@ -76,7 +76,7 @@ ERROR_BUTTON = InlineKeyboardMarkup(
         ]]
     )
 
-@Ekbotz.on_callback_query()
+@FayasNoushad.on_callback_query()
 async def cb_data(bot, update):
     if update.data == "home":
         await update.message.edit_text(
@@ -99,7 +99,7 @@ async def cb_data(bot, update):
     else:
         await update.message.delete()
 
-@Ekbotz.on_message(filters.private & filters.command(["start"]))
+@FayasNoushad.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
@@ -107,14 +107,14 @@ async def start(bot, update):
         reply_markup=START_BUTTONS
     )
 
-@Ekbotz.on_message(filters.private & filters.command(["help"]))
+@FayasNoushad.on_message(filters.private & filters.command(["help"]))
 async def help(bot, update):
     await update.reply_text(
         text=INFO_TEXT,
         disable_web_page_preview=True,
         reply_markup=HELP_BUTTONS
     )
-@Ekbotz.on_message(filters.private & filters.command(["info"]))
+@FayasNoushad.on_message(filters.private & filters.command(["info"]))
 async def info(bot, update):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
@@ -122,7 +122,7 @@ async def info(bot, update):
         reply_markup=ABOUT_BUTTONS
     )
 
-@Ekbotz.on_message(filters.private & filters.text)
+@FayasNoushad.on_message(filters.private & filters.text)
 async def countryinfo(bot, update):
     country = CountryInfo(update.text)
     info = f"""
