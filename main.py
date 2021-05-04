@@ -22,8 +22,7 @@ FayasNoushad = Client(
 
 START_TEXT = """
 <b>Hello 👋</b> {}, 
-<b>I Am A Country Info Provider Bot. I Can Find Informations About All Countries. Do You Have Any Doubts❓ Use Buttons Below 😅. 
-<u>Give me a country name I will send the informations of that country</u>.</b>
+<b>I Am A Country Info Provider Bot. I Can Find Informations About All Countries. Do You Have Any Doubts❓ Use Buttons Below 😅. /n/n/n<u>Give me a country name I will send the informations of that country</u>.</b>
 
 Please Join My Update Channel For Know More @eKbOtZ_upDaTE.</b>
 """
@@ -126,19 +125,18 @@ async def info(bot, update):
 async def countryinfo(bot, update):
     country = CountryInfo(update.text)
     info = f"""
-Name : `{country.name()}`
-Native Name : `{country.native_name()}`
-Capital : `{country.capital()}`
-Prime Minister : `{country.prime_minister()}`
-Population : `{country.population()}`
-Region : `{country.region()}`
-Sub Region : `{country.subregion()}`
-Number States : `{country.number_states()}`
-Country Domains : `{country.tld()}`
-Country Codes : `{country.calling_codes()}`
-Currencies : `{country.currencies()}`
-Residence : `{country.demonym()}`
-Timezone : `{country.timezones()}`
+➪ Name : `{country.name()}`
+➪ Native Name : `{country.native_name()}`
+➪ Capital : `{country.capital()}`
+➪ Prime Minister : `{country.prime_minister()}`
+➪ Population : `{country.population()}`
+➪ Region : `{country.region()}`
+➪ Sub Region : `{country.subregion()}`
+➪ Country Domains : `{country.tld()}`
+➪ Country Codes : `{country.calling_codes()}`
+➪ Currencies : `{country.currencies()}`
+➪ Residence : `{country.demonym()}`
+➪ Timezone : `{country.timezones()}`
 """
     reply_markup=InlineKeyboardMarkup(
         [[
