@@ -128,7 +128,6 @@ async def countryinfo(bot, update):
 ➪ Name : `{country.name()}`
 ➪ Native Name : `{country.native_name()}`
 ➪ Capital : `{country.capital()}`
-➪ Prime Minister : `{country.prime_minister()}`
 ➪ Population : `{country.population()}`
 ➪ Region : `{country.region()}`
 ➪ Sub Region : `{country.subregion()}`
