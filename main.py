@@ -22,9 +22,11 @@ FayasNoushad = Client(
 
 START_TEXT = """
 <b>Hello 👋</b> {}, 
-<b>I Am A Country Info Provider Bot. I Can Find Informations About All Countries. Do You Have Any Doubts❓ Use Buttons Below 😅. /n/n/n<u>Give me a country name I will send the informations of that country</u>.</b>
+<b>I Am A Country Info Provider Bot. I Can Find Informations About All Countries. Do You Have Any Doubts❓ Use Buttons Below 😅. 
 
-Please Join My Update Channel For Know More @eKbOtZ_upDaTE.</b>
+<u>Give me a country name I will send the informations of that country</u>.</b>
+
+Please Join My Update Channel For Know More... @eKbOtZ_upDaTE.</b>
 """
 HELP_TEXT = """
 • Just send me a country name
@@ -32,9 +34,10 @@ HELP_TEXT = """
 • Then I will check and send you the informations
 """
 INFO_TEXT = """
+Informations That I Will Provide About A Country 👇
 <b><u>Informations :-</u></b>
-There Is The List Of That I Can Fetch These Informations👇.
-Name, Native Name, Capital, Population, Region, Sub Region, Top Level Domains, Calling Codes, Currencies, Residence, Timezone, Wikipedia, Google
+
+Name, Native Name, Capital, Population, Region, Sub Region, Country Domains, Country Codes, Currencies, Residence, Timezone, Wikipedia, Google
 
 <b>A Bot From @eKbOtZ_upDaTE</b>
 """
@@ -109,14 +112,14 @@ async def start(bot, update):
 @FayasNoushad.on_message(filters.private & filters.command(["help"]))
 async def help(bot, update):
     await update.reply_text(
-        text=INFO_TEXT,
+        text=HELP_TEXT,
         disable_web_page_preview=True,
         reply_markup=HELP_BUTTONS
     )
 @FayasNoushad.on_message(filters.private & filters.command(["info"]))
 async def info(bot, update):
     await update.reply_text(
-        text=START_TEXT.format(update.from_user.mention),
+        text=INFO_TEXT.format(update.from_user.mention),
         disable_web_page_preview=True,
         reply_markup=ABOUT_BUTTONS
     )
@@ -142,8 +145,8 @@ async def countryinfo(bot, update):
         InlineKeyboardButton('Wikipedia', url=f'{country.wiki()}'),
         InlineKeyboardButton('Google', url=f'https://www.google.com/search?q={country.name()}')
         ],[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        InlineKeyboardButton('Channel', url='https://telegram.me/eKbOtZ_upDaTE'),
+        InlineKeyboardButton('Report Bugs', url='https://telegram.me/ekbotz_support')
 
         ]]
     )
